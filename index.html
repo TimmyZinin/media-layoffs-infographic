@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Layoffs & AI Misinformation Crisis — Interactive Infographic 2025-2026</title>
+    <meta name="description" content="Deep research: How media layoffs fuel AI-generated misinformation. Track false reports, LLM propagation, and trust decline across English-language outlets.">
+    <meta property="og:title" content="Media Layoffs & AI Misinformation Crisis 2025-2026">
+    <meta property="og:description" content="Interactive infographic: 17,000+ media jobs cut, 53% AI article error rates, trust at all-time 28% low. How layoffs create a misinformation feedback loop.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a2e;
+            --bg-card-hover: #222240;
+            --text-primary: #e8e8f0;
+            --text-secondary: #9494b8;
+            --text-muted: #6b6b8a;
+            --accent-red: #ff3b5c;
+            --accent-red-glow: rgba(255, 59, 92, 0.3);
+            --accent-orange: #ff8c42;
+            --accent-orange-glow: rgba(255, 140, 66, 0.2);
+            --accent-yellow: #ffd166;
+            --accent-blue: #4ecdc4;
+            --accent-blue-glow: rgba(78, 205, 196, 0.2);
+            --accent-purple: #a78bfa;
+            --accent-purple-glow: rgba(167, 139, 250, 0.2);
+            --accent-cyan: #22d3ee;
+            --border-subtle: rgba(148, 148, 184, 0.12);
+            --border-glow: rgba(255, 59, 92, 0.25);
+            --gradient-red: linear-gradient(135deg, #ff3b5c, #ff6b8a);
+            --gradient-orange: linear-gradient(135deg, #ff8c42, #ffb347);
+            --gradient-blue: linear-gradient(135deg, #4ecdc4, #44a8b3);
+            --gradient-purple: linear-gradient(135deg, #a78bfa, #8b5cf6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-red); border-radius: 3px; }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255, 59, 92, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 30%, rgba(78, 205, 196, 0.05) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 80%, rgba(167, 139, 250, 0.05) 0%, transparent 50%);
+            animation: heroGlow 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroGlow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-3%, -3%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(255, 59, 92, 0.1);
+            border: 1px solid rgba(255, 59, 92, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent-red);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-red);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .gradient-text {
+            background: var(--gradient-red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-stat:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px var(--accent-red-glow);
+        }
+
+        .hero-stat .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            display: block;
+        }
+
+        .hero-stat .label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+
+        .red { color: var(--accent-red); }
+        .orange { color: var(--accent-orange); }
+        .yellow { color: var(--accent-yellow); }
+        .blue { color: var(--accent-blue); }
+        .purple { color: var(--accent-purple); }
+        .cyan { color: var(--accent-cyan); }
+
+        /* Navigation */
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.75rem 2rem;
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .nav-inner::-webkit-scrollbar { display: none; }
+
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-primary);
+            background: var(--bg-card);
+            border-color: var(--border-subtle);
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-red);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        /* Layoff Cards */
+        .layoff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .layoff-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.75rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .layoff-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-red);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .layoff-card:hover::before { opacity: 1; }
+        .layoff-card:hover {
+            border-color: rgba(255, 59, 92, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .layoff-card .outlet-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .layoff-card .outlet-date {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 1rem;
+        }
+
+        .layoff-card .cuts-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-red);
+            line-height: 1;
+        }
+
+        .layoff-card .cuts-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.25rem;
+        }
+
+        .layoff-card .cuts-pct {
+            display: inline-block;
+            background: rgba(255, 59, 92, 0.15);
+            color: var(--accent-red);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 0.75rem;
+        }
+
+        .layoff-card .dept-tag {
+            display: inline-block;
+            background: rgba(148, 148, 184, 0.1);
+            color: var(--text-secondary);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            margin-top: 0.75rem;
+            margin-right: 0.25rem;
+        }
+
+        /* Bar chart */
+        .bar-chart {
+            margin: 3rem 0;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            min-width: 180px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: #fff;
+            min-width: fit-content;
+            transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            width: 0;
+        }
+
+        .bar-fill.animated { width: var(--width); }
+
+        .bar-fill.red-bar { background: linear-gradient(90deg, rgba(255, 59, 92, 0.8), rgba(255, 59, 92, 0.5)); }
+        .bar-fill.orange-bar { background: linear-gradient(90deg, rgba(255, 140, 66, 0.8), rgba(255, 140, 66, 0.5)); }
+        .bar-fill.blue-bar { background: linear-gradient(90deg, rgba(78, 205, 196, 0.8), rgba(78, 205, 196, 0.5)); }
+        .bar-fill.purple-bar { background: linear-gradient(90deg, rgba(167, 139, 250, 0.8), rgba(167, 139, 250, 0.5)); }
+
+        /* AI Scandals Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-red), var(--accent-purple), var(--accent-blue));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding: 1.75rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            border-color: rgba(255, 59, 92, 0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.45rem;
+            top: 1.75rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent-red);
+            border: 3px solid var(--bg-primary);
+            z-index: 2;
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--accent-red);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-body {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+
+        .error-rate-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 59, 92, 0.12);
+            border: 1px solid rgba(255, 59, 92, 0.25);
+            color: var(--accent-red);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 0.75rem;
+        }
+
+        .reach-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 140, 66, 0.12);
+            border: 1px solid rgba(255, 140, 66, 0.25);
+            color: var(--accent-orange);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 0.75rem;
+            margin-left: 0.5rem;
+        }
+
+        /* Trust Gauge */
+        .trust-gauges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gauge-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .gauge-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .gauge-circle {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .gauge-circle svg {
+            transform: rotate(-90deg);
+            width: 160px;
+            height: 160px;
+        }
+
+        .gauge-circle .bg-ring {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.05);
+            stroke-width: 12;
+        }
+
+        .gauge-circle .value-ring {
+            fill: none;
+            stroke-width: 12;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gauge-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.2rem;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .gauge-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .gauge-source {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+
+        /* Propagation Flow */
+        .flow-diagram {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            min-width: fit-content;
+        }
+
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 130px;
+            max-width: 160px;
+            padding: 1rem 0.5rem;
+        }
+
+        .flow-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .flow-icon.step-1 { background: rgba(255, 59, 92, 0.15); border: 1px solid rgba(255, 59, 92, 0.3); }
+        .flow-icon.step-2 { background: rgba(255, 140, 66, 0.15); border: 1px solid rgba(255, 140, 66, 0.3); }
+        .flow-icon.step-3 { background: rgba(255, 209, 102, 0.15); border: 1px solid rgba(255, 209, 102, 0.3); }
+        .flow-icon.step-4 { background: rgba(78, 205, 196, 0.15); border: 1px solid rgba(78, 205, 196, 0.3); }
+        .flow-icon.step-5 { background: rgba(167, 139, 250, 0.15); border: 1px solid rgba(167, 139, 250, 0.3); }
+        .flow-icon.step-6 { background: rgba(34, 211, 238, 0.15); border: 1px solid rgba(34, 211, 238, 0.3); }
+
+        .flow-step-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .flow-step-desc {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .flow-arrow {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            min-width: 30px;
+            text-align: center;
+            animation: arrowPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* Impact Table */
+        .impact-table-wrap {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .impact-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+        }
+
+        .impact-table th {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .impact-table td {
+            padding: 1rem 1.25rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(148, 148, 184, 0.06);
+        }
+
+        .impact-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .impact-table .mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+        }
+
+        .severity-high {
+            color: var(--accent-red);
+        }
+
+        .severity-med {
+            color: var(--accent-orange);
+        }
+
+        .severity-low {
+            color: var(--accent-yellow);
+        }
+
+        /* Key Insights */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .insight-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+        }
+
+        .insight-card.insight-red::before { background: var(--gradient-red); }
+        .insight-card.insight-orange::before { background: var(--gradient-orange); }
+        .insight-card.insight-blue::before { background: var(--gradient-blue); }
+        .insight-card.insight-purple::before { background: var(--gradient-purple); }
+
+        .insight-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+
+        .insight-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-body {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Country Map */
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .country-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.75rem;
+        }
+
+        .country-flag {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .country-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .country-outlets {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .country-stat {
+            display: inline-block;
+            background: rgba(255, 59, 92, 0.1);
+            color: var(--accent-red);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 0.75rem;
+        }
+
+        /* PR Strategy */
+        .strategy-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .strategy-item {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        .strategy-item:hover {
+            border-color: rgba(78, 205, 196, 0.2);
+            transform: translateX(4px);
+        }
+
+        .strategy-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--accent-blue);
+            min-width: 40px;
+        }
+
+        .strategy-content h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+
+        .strategy-content p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Counter animation */
+        .counter {
+            display: inline-block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .layoff-grid { grid-template-columns: 1fr; }
+            .flow-steps { flex-direction: column; }
+            .flow-arrow { transform: rotate(90deg); }
+            .bar-label { min-width: 120px; font-size: 0.78rem; }
+            .section { padding: 3rem 1rem; }
+            .timeline { padding-left: 2.5rem; }
+        }
+
+        /* Animated gradient border for key cards */
+        .glow-border {
+            position: relative;
+        }
+
+        .glow-border::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 17px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-purple), var(--accent-blue), var(--accent-red));
+            background-size: 300% 300%;
+            animation: gradientBorder 4s ease infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .glow-border:hover::after { opacity: 1; }
+
+        @keyframes gradientBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-red);
+            z-index: 1000;
+            transition: width 0.1s;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            cursor: help;
+            border-bottom: 1px dashed var(--text-muted);
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            z-index: 50;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Year comparison mini chart */
+        .year-compare {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .year-bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .year-bar {
+            width: 60px;
+            border-radius: 8px 8px 0 0;
+            transition: height 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .year-bar-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .year-bar-value {
+            font-size: 0.82rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="pulse"></span>
+            Deep Research Report — March 2026
+        </div>
+        <h1>
+            The <span class="gradient-text">Misinformation</span><br>
+            Feedback Loop
+        </h1>
+        <p class="hero-subtitle">
+            How media layoffs, AI-generated content, and declining trust create a self-reinforcing cycle of misinformation — now amplified by LLMs at unprecedented scale.
+        </p>
+        <div class="hero-stats">
+            <div class="hero-stat glow-border">
+                <span class="number red counter" data-target="17000">0</span>
+                <span class="label">Media jobs cut in 2025</span>
+            </div>
+            <div class="hero-stat glow-border">
+                <span class="number orange counter" data-target="53">0</span>
+                <span class="label">% CNET AI articles with errors</span>
+            </div>
+            <div class="hero-stat glow-border">
+                <span class="number yellow counter" data-target="28">0</span>
+                <span class="label">% US media trust (all-time low)</span>
+            </div>
+            <div class="hero-stat glow-border">
+                <span class="number purple counter" data-target="10">0</span>
+                <span class="label">&times; faster false news spreads</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NAVIGATION -->
+<nav class="nav-sticky" id="navSticky">
+    <div class="nav-inner">
+        <a href="#layoffs" class="nav-link">Layoffs Tracker</a>
+        <a href="#ai-scandals" class="nav-link">AI Content Scandals</a>
+        <a href="#trust" class="nav-link">Trust Decline</a>
+        <a href="#propagation" class="nav-link">LLM Propagation</a>
+        <a href="#impact" class="nav-link">Impact & Reach</a>
+        <a href="#geography" class="nav-link">Geography</a>
+        <a href="#strategy" class="nav-link">PR Implications</a>
+    </div>
+</nav>
+
+<!-- 01: LAYOFFS -->
+<section class="section fade-in" id="layoffs">
+    <div class="section-header">
+        <div class="section-number">01 — LAYOFFS TRACKER</div>
+        <h2 class="section-title">The Great Media Downsizing</h2>
+        <p class="section-desc">Q4 2025 — Q1 2026 saw the largest wave of journalism layoffs in modern history. 2026's pace is on track to surpass both 2024 and 2025 before summer.</p>
+    </div>
+
+    <!-- Year comparison -->
+    <div class="year-compare fade-in">
+        <div class="year-bar-group">
+            <div class="year-bar-value red">~6,000</div>
+            <div class="year-bar" style="height: 200px; background: linear-gradient(to top, rgba(255,59,92,0.3), rgba(255,59,92,0.7));" data-height="200"></div>
+            <div class="year-bar-label">2023</div>
+        </div>
+        <div class="year-bar-group">
+            <div class="year-bar-value orange">3,875</div>
+            <div class="year-bar" style="height: 130px; background: linear-gradient(to top, rgba(255,140,66,0.3), rgba(255,140,66,0.7));" data-height="130"></div>
+            <div class="year-bar-label">2024</div>
+        </div>
+        <div class="year-bar-group">
+            <div class="year-bar-value yellow">3,434</div>
+            <div class="year-bar" style="height: 115px; background: linear-gradient(to top, rgba(255,209,102,0.3), rgba(255,209,102,0.7));" data-height="115"></div>
+            <div class="year-bar-label">2025</div>
+        </div>
+        <div class="year-bar-group">
+            <div class="year-bar-value purple">~1,200+</div>
+            <div class="year-bar" style="height: 180px; background: linear-gradient(to top, rgba(167,139,250,0.3), rgba(167,139,250,0.9)); border: 1px dashed rgba(167,139,250,0.5);" data-height="180"></div>
+            <div class="year-bar-label">2026 (proj.)</div>
+        </div>
+    </div>
+    <p style="text-align:center; font-size:0.78rem; color:var(--text-muted); margin-bottom: 3rem;">
+        Journalism-specific job cuts (UK + US). 2026 projected based on Q1 pace. Sources: Press Gazette, The Wrap
+    </p>
+
+    <div class="layoff-grid">
+        <div class="layoff-card glow-border fade-in">
+            <div class="outlet-name">Washington Post</div>
+            <div class="outlet-date">FEB 4, 2026</div>
+            <div class="cuts-number">375</div>
+            <div class="cuts-label">journalists eliminated</div>
+            <div class="cuts-pct">47% of newsroom</div>
+            <div><span class="dept-tag">Sports eliminated</span><span class="dept-tag">Foreign bureaus</span><span class="dept-tag">Books</span></div>
+        </div>
+
+        <div class="layoff-card glow-border fade-in">
+            <div class="outlet-name">CNN</div>
+            <div class="outlet-date">JAN 2025</div>
+            <div class="cuts-number">200</div>
+            <div class="cuts-label">employees cut</div>
+            <div class="cuts-pct">6% of workforce</div>
+            <div><span class="dept-tag">TV operations</span><span class="dept-tag">Digital investment</span></div>
+        </div>
+
+        <div class="layoff-card glow-border fade-in">
+            <div class="outlet-name">Atlanta Journal-Constitution</div>
+            <div class="outlet-date">FEB 2026</div>
+            <div class="cuts-number">~50</div>
+            <div class="cuts-label">employees laid off</div>
+            <div class="cuts-pct">15% of staff</div>
+            <div><span class="dept-tag">Newsroom</span><span class="dept-tag">Operations</span><span class="dept-tag">Print → digital</span></div>
+        </div>
+
+        <div class="layoff-card glow-border fade-in">
+            <div class="outlet-name">Future plc</div>
+            <div class="outlet-date">JAN 2026</div>
+            <div class="cuts-number">45</div>
+            <div class="cuts-label">editorial roles cut (net -30)</div>
+            <div><span class="dept-tag">Tom's Guide</span><span class="dept-tag">TechRadar</span><span class="dept-tag">UK + US</span></div>
+        </div>
+
+        <div class="layoff-card glow-border fade-in">
+            <div class="outlet-name">Vox Media</div>
+            <div class="outlet-date">JAN 2026 (3rd round)</div>
+            <div class="cuts-number">37+</div>
+            <div class="cuts-label">known cuts in 2025-2026</div>
+            <div><span class="dept-tag">Thrillist</span><span class="dept-tag">Eater</span><span class="dept-tag">Podcasts</span><span class="dept-tag">Pop Sugar</span></div>
+        </div>
+
+        <div class="layoff-card glow-border fade-in">
+            <div class="outlet-name">Politico</div>
+            <div class="outlet-date">JAN 2026</div>
+            <div class="cuts-number">~23</div>
+            <div class="cuts-label">staff cut</div>
+            <div class="cuts-pct">3% of ~750 staff</div>
+            <div><span class="dept-tag">Newsroom</span></div>
+        </div>
+
+        <div class="layoff-card glow-border fade-in">
+            <div class="outlet-name">Wall Street Journal</div>
+            <div class="outlet-date">JAN-FEB 2026</div>
+            <div class="cuts-number">5+</div>
+            <div class="cuts-label">waves of restructuring</div>
+            <div><span class="dept-tag">Features</span><span class="dept-tag">Weekend</span><span class="dept-tag">U.S. News</span></div>
+        </div>
+
+        <div class="layoff-card glow-border fade-in">
+            <div class="outlet-name">CNBC</div>
+            <div class="outlet-date">2026</div>
+            <div class="cuts-number">~12</div>
+            <div class="cuts-label">layoffs incl. managing editor</div>
+            <div><span class="dept-tag">TV/Digital merge</span></div>
+        </div>
+    </div>
+
+    <!-- Key Drivers Bar Chart -->
+    <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.2rem;">Primary Drivers of Layoffs</h3>
+    <div class="bar-chart fade-in">
+        <div class="bar-row">
+            <div class="bar-label">Search traffic collapse</div>
+            <div class="bar-track">
+                <div class="bar-fill red-bar" style="--width: 90%;">Google AI Overviews</div>
+            </div>
+        </div>
+        <div class="bar-row">
+            <div class="bar-label">Print ad revenue decline</div>
+            <div class="bar-track">
+                <div class="bar-fill orange-bar" style="--width: 82%;">Structural decline</div>
+            </div>
+        </div>
+        <div class="bar-row">
+            <div class="bar-label">AI replacing tasks</div>
+            <div class="bar-track">
+                <div class="bar-fill purple-bar" style="--width: 70%;">Content, editing, research</div>
+            </div>
+        </div>
+        <div class="bar-row">
+            <div class="bar-label">Consolidation</div>
+            <div class="bar-track">
+                <div class="bar-fill blue-bar" style="--width: 55%;">Mergers & restructuring</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02: AI SCANDALS -->
+<section class="section fade-in" id="ai-scandals">
+    <div class="section-header">
+        <div class="section-number">02 — AI CONTENT SCANDALS</div>
+        <h2 class="section-title">When Algorithms Replace Journalists</h2>
+        <p class="section-desc">Major outlets attempted to replace laid-off staff with AI. The results ranged from embarrassing to dangerous — fabricated quotes, fake authors, and error rates exceeding 50%.</p>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">AUG 2023</div>
+            <div class="timeline-title">Gannett / USA Today — LedeAI Sports Disaster</div>
+            <div class="timeline-body">
+                AI service LedeAI generated high school sports articles with template placeholders left in production: <em>"The Worthington Christian [[WINNING_TEAM_MASCOT]] defeated the Westerville North [[LOSING_TEAM_MASCOT]]"</em>. Robotic language, factual gaps, and phrases like "Close encounters of the athletic kind" were mocked viral on social media.
+            </div>
+            <span class="reach-badge">Reach: ~100M/mo (Gannett network)</span>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">NOV 2023</div>
+            <div class="timeline-title">Sports Illustrated — Fake AI Authors</div>
+            <div class="timeline-body">
+                Articles published under completely fabricated AI personas — "Drew Ortiz," "Sora Tanaka" — with AI-generated headshots and fake bios. None of these people existed. Editor-in-chief was fired, parent company Arena Group was eventually sold.
+            </div>
+            <span class="reach-badge">Reach: ~30M visits/mo</span>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">JAN 2023</div>
+            <div class="timeline-title">CNET — 53% Error Rate in AI Articles</div>
+            <div class="timeline-body">
+                77 financial articles generated by internal AI engine published under "CNET Money Staff." After investigation, <strong>41 of 77 articles required corrections</strong> — errors included wrong math, transposed numbers, incomplete facts, and potential plagiarism. A compound interest article confused earnings ($300) with total balance ($10,300).
+            </div>
+            <span class="error-rate-badge">Error rate: 53%</span>
+            <span class="reach-badge">Reach: ~200M visits/mo</span>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">MAY — AUG 2025</div>
+            <div class="timeline-title">"Margaux Blanchard" — The Phantom Journalist</div>
+            <div class="timeline-body">
+                A non-existent freelancer successfully placed AI-generated articles in <strong>Wired, Business Insider, Index on Censorship, and Cone Magazine</strong>. Articles contained fabricated sources, fake quotes from people who don't exist, and entirely fictional case studies. Detected only when unusual payment methods were requested and no LinkedIn profile was found.
+            </div>
+            <span class="error-rate-badge">Publications duped: 4+</span>
+            <span class="reach-badge">Combined reach: ~100M+/mo</span>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">JUN 2025</div>
+            <div class="timeline-title">Belgium Psychologies — 96% AI Content</div>
+            <div class="timeline-body">
+                44 of 46 articles published by Belgium's Psychologies magazine featured "Femke," a completely fabricated AI psychologist persona. Nearly the entire publication was AI-generated under a fake identity.
+            </div>
+            <span class="error-rate-badge">AI content: 96%</span>
+        </div>
+
+        <div class="timeline-item fade-in">
+            <div class="timeline-date">DEC 2025</div>
+            <div class="timeline-title">Washington Post — AI Podcast with Fabricated Quotes</div>
+            <div class="timeline-body">
+                "Your Personal Podcast" feature launched despite <strong>68-84% of scripts failing quality standards</strong> in internal testing. The AI fabricated quotes attributed to real people, misrepresented facts, and added invented commentary. Management memo: "iterate through the remaining issues." Staff revolt followed.
+            </div>
+            <span class="error-rate-badge">Failure rate: 68-84%</span>
+            <span class="reach-badge">WaPo app: millions of users</span>
+        </div>
+    </div>
+</section>
+
+<!-- 03: TRUST -->
+<section class="section fade-in" id="trust">
+    <div class="section-header">
+        <div class="section-number">03 — TRUST DECLINE</div>
+        <h2 class="section-title">The Credibility Crisis</h2>
+        <p class="section-desc">Public trust in media has reached historic lows across all major measurement frameworks. AI content failures accelerate the decline.</p>
+    </div>
+
+    <div class="trust-gauges">
+        <div class="gauge-card fade-in">
+            <h3>US Media Trust</h3>
+            <div class="gauge-circle">
+                <svg viewBox="0 0 160 160">
+                    <circle class="bg-ring" cx="80" cy="80" r="65"/>
+                    <circle class="value-ring" cx="80" cy="80" r="65"
+                            stroke="var(--accent-red)"
+                            stroke-dasharray="408.4"
+                            stroke-dashoffset="294"
+                            data-offset="294"/>
+                </svg>
+                <span class="gauge-value red">28%</span>
+            </div>
+            <div class="gauge-label">All-Time Low</div>
+            <div class="gauge-source">Gallup, 2025</div>
+        </div>
+
+        <div class="gauge-card fade-in">
+            <h3>Global News Trust</h3>
+            <div class="gauge-circle">
+                <svg viewBox="0 0 160 160">
+                    <circle class="bg-ring" cx="80" cy="80" r="65"/>
+                    <circle class="value-ring" cx="80" cy="80" r="65"
+                            stroke="var(--accent-orange)"
+                            stroke-dasharray="408.4"
+                            stroke-dashoffset="245"
+                            data-offset="245"/>
+                </svg>
+                <span class="gauge-value orange">40%</span>
+            </div>
+            <div class="gauge-label">Flat for 3 years</div>
+            <div class="gauge-source">Reuters Institute DNR, 2025</div>
+        </div>
+
+        <div class="gauge-card fade-in">
+            <h3>News Org Trust Change</h3>
+            <div class="gauge-circle">
+                <svg viewBox="0 0 160 160">
+                    <circle class="bg-ring" cx="80" cy="80" r="65"/>
+                    <circle class="value-ring" cx="80" cy="80" r="65"
+                            stroke="var(--accent-purple)"
+                            stroke-dasharray="408.4"
+                            stroke-dashoffset="363.5"
+                            data-offset="363.5"/>
+                </svg>
+                <span class="gauge-value purple">-11</span>
+            </div>
+            <div class="gauge-label">Net trust loss (pts)</div>
+            <div class="gauge-source">Edelman Trust Barometer, 2026</div>
+        </div>
+    </div>
+
+    <!-- Additional trust data -->
+    <div class="insights-grid" style="margin-top: 2rem;">
+        <div class="insight-card insight-red fade-in">
+            <div class="insight-number red">40%</div>
+            <div class="insight-title">News Avoidance Rate</div>
+            <div class="insight-body">40% of people now sometimes or often actively avoid news. Social media and video are replacing traditional news consumption channels.</div>
+        </div>
+        <div class="insight-card insight-orange fade-in">
+            <div class="insight-number orange">50%</div>
+            <div class="insight-title">Cite Misinformation as Trust Eroder</div>
+            <div class="insight-body">Half of all respondents in Edelman's 2026 study cite misinformation as a top factor eroding trust in institutions.</div>
+        </div>
+        <div class="insight-card insight-purple fade-in">
+            <div class="insight-number purple">7/10</div>
+            <div class="insight-title">Information Bubble</div>
+            <div class="insight-body">7 in 10 respondents are unwilling to trust someone with different information sources. Society is retreating into insularity.</div>
+        </div>
+    </div>
+</section>
+
+<!-- 04: PROPAGATION -->
+<section class="section fade-in" id="propagation">
+    <div class="section-header">
+        <div class="section-number">04 — LLM PROPAGATION CHAIN</div>
+        <h2 class="section-title">How Errors Become "Facts"</h2>
+        <p class="section-desc">When understaffed newsrooms publish AI-generated errors on high-authority domains, those errors enter a self-reinforcing loop: indexed by search engines, scraped for LLM training, and served back to millions as reliable information.</p>
+    </div>
+
+    <div class="flow-diagram fade-in">
+        <div class="flow-steps">
+            <div class="flow-step">
+                <div class="flow-icon step-1">✂️</div>
+                <div class="flow-step-label red">Layoffs</div>
+                <div class="flow-step-desc">Reduced staff, fact-checkers cut, AI fills gaps</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon step-2">🤖</div>
+                <div class="flow-step-label orange">AI Content</div>
+                <div class="flow-step-desc">Articles with errors published on high-authority domains</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon step-3">🔍</div>
+                <div class="flow-step-label yellow">Indexed</div>
+                <div class="flow-step-desc">Google ranks it high (domain authority)</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon step-4">🧠</div>
+                <div class="flow-step-label blue">LLM Training</div>
+                <div class="flow-step-desc">Scraped into GPT, Claude, Gemini, Llama datasets</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon step-5">💬</div>
+                <div class="flow-step-label purple">AI Answers</div>
+                <div class="flow-step-desc">Perplexity, ChatGPT cite false info as "source"</div>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+                <div class="flow-icon step-6">📱</div>
+                <div class="flow-step-label cyan">Amplification</div>
+                <div class="flow-step-desc">Users share, other outlets syndicate, cycle repeats</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="insights-grid">
+        <div class="insight-card insight-red fade-in">
+            <div class="insight-number red">10×</div>
+            <div class="insight-title">False News Speed Advantage</div>
+            <div class="insight-body">MIT research found false news spreads 10 times faster than true news on social media. Corrections are never as widely viewed or believed as the original.</div>
+        </div>
+        <div class="insight-card insight-orange fade-in">
+            <div class="insight-number orange">91K+</div>
+            <div class="insight-title">Misleading Posts on X</div>
+            <div class="insight-body">91,452 misleading posts identified on X's Community Notes platform between Jan 2023 and Jan 2025 — both AI-generated and human-created.</div>
+        </div>
+        <div class="insight-card insight-blue fade-in">
+            <div class="insight-number blue">60%+</div>
+            <div class="insight-title">Crypto Press Release Risk</div>
+            <div class="insight-body">Over 60% of crypto press releases are linked to high-risk or scam projects. Only 2% report meaningful news. (Chainstory study, 2026)</div>
+        </div>
+        <div class="insight-card insight-purple fade-in">
+            <div class="insight-number purple">$18B</div>
+            <div class="insight-title">Perplexity's Plagiarism Engine</div>
+            <div class="insight-body">Sued by NYT, News Corp, Chicago Tribune. Paraphrased 48% of Forbes articles, circumvented robots.txt with secret IPs, generates summaries with false attributions.</div>
+        </div>
+    </div>
+
+    <!-- AI-to-AI Error Loops -->
+    <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.2rem;">Documented AI-to-AI Error Loops</h3>
+    <div class="impact-table-wrap fade-in">
+        <table class="impact-table">
+            <thead>
+                <tr>
+                    <th>Origin</th>
+                    <th>Error Type</th>
+                    <th>Propagation Path</th>
+                    <th>Risk Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>CNET</strong> financial errors</td>
+                    <td>Wrong math, plagiarism</td>
+                    <td>Google index → LLM training data → ChatGPT/Claude financial advice</td>
+                    <td class="severity-high mono">HIGH</td>
+                </tr>
+                <tr>
+                    <td><strong>WaPo</strong> AI podcast</td>
+                    <td>Fabricated quotes</td>
+                    <td>Published → Shared on social → Indexed → Cited as "source"</td>
+                    <td class="severity-high mono">HIGH</td>
+                </tr>
+                <tr>
+                    <td><strong>Margaux Blanchard</strong></td>
+                    <td>Fictional sources & quotes</td>
+                    <td>Wired/BI (high DA) → Google → LLM training before removal</td>
+                    <td class="severity-med mono">MEDIUM</td>
+                </tr>
+                <tr>
+                    <td><strong>Perplexity</strong> summaries</td>
+                    <td>Misattribution, false paraphrasing</td>
+                    <td>User queries → Wrong "facts" → Shared → Other AI scrape</td>
+                    <td class="severity-high mono">HIGH</td>
+                </tr>
+                <tr>
+                    <td><strong>SI</strong> fake authors</td>
+                    <td>Invented personas</td>
+                    <td>Articles indexed → LLMs cite "Drew Ortiz" as source</td>
+                    <td class="severity-low mono">LOW (removed)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- 05: IMPACT -->
+<section class="section fade-in" id="impact">
+    <div class="section-header">
+        <div class="section-number">05 — ESTIMATED IMPACT & REACH</div>
+        <h2 class="section-title">Impressions of Misinformation</h2>
+        <p class="section-desc">Conservative estimates of how many people were exposed to AI-originated false or low-quality content from major English-language outlets (2023-2026).</p>
+    </div>
+
+    <div class="impact-table-wrap fade-in">
+        <table class="impact-table">
+            <thead>
+                <tr>
+                    <th>Incident</th>
+                    <th>Outlet Reach</th>
+                    <th>Est. Article Impressions</th>
+                    <th>Social Amplification</th>
+                    <th>Correction Visibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>CNET</strong> AI errors (41 articles)</td>
+                    <td class="mono">200M/mo</td>
+                    <td class="mono severity-high">5-15M</td>
+                    <td>Viral on Twitter/Reddit</td>
+                    <td class="severity-low">Low — buried</td>
+                </tr>
+                <tr>
+                    <td><strong>Sports Illustrated</strong> fake authors</td>
+                    <td class="mono">30M/mo</td>
+                    <td class="mono severity-med">2-5M</td>
+                    <td>Massive media coverage</td>
+                    <td class="severity-med">Medium</td>
+                </tr>
+                <tr>
+                    <td><strong>Gannett/USA Today</strong> LedeAI</td>
+                    <td class="mono">100M/mo</td>
+                    <td class="mono severity-med">0.5-2M</td>
+                    <td>Viral mockery</td>
+                    <td>High (but trust lost)</td>
+                </tr>
+                <tr>
+                    <td><strong>Washington Post</strong> AI podcast</td>
+                    <td class="mono">50M/mo</td>
+                    <td class="mono severity-med">1-3M</td>
+                    <td>Extensive coverage</td>
+                    <td class="severity-med">Medium</td>
+                </tr>
+                <tr>
+                    <td><strong>Margaux Blanchard</strong> (4+ outlets)</td>
+                    <td class="mono">100M+/mo</td>
+                    <td class="mono severity-med">0.5-1.5M</td>
+                    <td>Moderate</td>
+                    <td class="severity-low">Low before catch</td>
+                </tr>
+                <tr>
+                    <td><strong>Psychologies Belgium</strong></td>
+                    <td class="mono">N/A</td>
+                    <td class="mono severity-low">~100K</td>
+                    <td>Industry shock</td>
+                    <td class="severity-med">Medium</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="insight-card insight-red fade-in" style="margin-top: 2rem; text-align: center; padding: 2.5rem;">
+        <div class="insight-number red" style="font-size: 3.5rem;">50-100M+</div>
+        <div class="insight-title" style="font-size: 1.2rem;">Conservative Total Impressions</div>
+        <div class="insight-body" style="max-width: 600px; margin: 0.5rem auto 0;">
+            Estimated total impressions from AI-originated false or low-quality content in major English-language outlets from 2023 to Q1 2026. Actual exposure is likely multiples higher when including search engine results, LLM citations, and social media reshares.
+        </div>
+    </div>
+
+    <!-- No reliable mechanism -->
+    <div class="insight-card insight-purple fade-in" style="margin-top: 1.5rem; text-align: center; padding: 2rem;">
+        <div class="insight-title" style="font-size: 1.1rem; color: var(--accent-purple);">⚠️ No Retroactive Correction Mechanism</div>
+        <div class="insight-body" style="max-width: 700px; margin: 0.75rem auto 0;">
+            There is currently <strong>no reliable mechanism</strong> to retroactively remove corrected articles from LLM training datasets. Once false information from a reputable outlet enters the training pipeline, it persists in model weights indefinitely — even after the original article is corrected or retracted.
+        </div>
+    </div>
+</section>
+
+<!-- 06: GEOGRAPHY -->
+<section class="section fade-in" id="geography">
+    <div class="section-header">
+        <div class="section-number">06 — GEOGRAPHIC BREAKDOWN</div>
+        <h2 class="section-title">Where It's Happening</h2>
+        <p class="section-desc">English-language media across the US, UK, and global outlets — the crisis is not contained to one market.</p>
+    </div>
+
+    <div class="country-grid">
+        <div class="country-card fade-in">
+            <div class="country-flag">🇺🇸</div>
+            <div class="country-name">United States</div>
+            <div class="country-outlets">
+                <strong>Layoffs:</strong> Washington Post (375), CNN (200), Vox Media (37+), Gannett, Politico (23), WSJ, CNBC<br><br>
+                <strong>AI Scandals:</strong> CNET (53% error rate), Sports Illustrated (fake authors), Gannett/USA Today (LedeAI), Washington Post (AI podcast)
+            </div>
+            <span class="country-stat">Epicenter — hundreds per outlet</span>
+        </div>
+
+        <div class="country-card fade-in">
+            <div class="country-flag">🇬🇧</div>
+            <div class="country-name">United Kingdom</div>
+            <div class="country-outlets">
+                <strong>Layoffs:</strong> Future plc / Tom's Guide / TechRadar (45 editorial cuts)<br><br>
+                <strong>AI Scandals:</strong> "Margaux Blanchard" published in Wired UK, Index on Censorship
+            </div>
+            <span class="country-stat">Tech media hit hardest</span>
+        </div>
+
+        <div class="country-card fade-in">
+            <div class="country-flag">🇧🇪</div>
+            <div class="country-name">Belgium</div>
+            <div class="country-outlets">
+                <strong>AI Scandals:</strong> Psychologies magazine — 44 of 46 articles (96%) published under AI persona "Femke"
+            </div>
+            <span class="country-stat">Near-total AI takeover</span>
+        </div>
+
+        <div class="country-card fade-in">
+            <div class="country-flag">🌍</div>
+            <div class="country-name">Global</div>
+            <div class="country-outlets">
+                <strong>LLM Propagation:</strong> Perplexity AI scraping global outlets (NYT, WSJ, Forbes, Wired), sued by multiple publishers<br><br>
+                <strong>Trust:</strong> Global trust at 40%, Nordic countries highest (60%+), Hungary/Greece lowest (22%)
+            </div>
+            <span class="country-stat">No market immune</span>
+        </div>
+    </div>
+</section>
+
+<!-- 07: PR STRATEGY -->
+<section class="section fade-in" id="strategy">
+    <div class="section-header">
+        <div class="section-number">07 — PR IMPLICATIONS</div>
+        <h2 class="section-title">What This Means for PR Strategy</h2>
+        <p class="section-desc">The media landscape has fundamentally shifted. Here's how to navigate it for maximum impact and minimum risk.</p>
+    </div>
+
+    <ul class="strategy-list">
+        <li class="strategy-item fade-in">
+            <div class="strategy-num">01</div>
+            <div class="strategy-content">
+                <h4>Window of Opportunity</h4>
+                <p>Outlets with reduced staff are more receptive to well-prepared PR materials, expert commentary, and exclusive stories. Pitch quality content to resource-strapped newsrooms — they need your help more than ever.</p>
+            </div>
+        </li>
+        <li class="strategy-item fade-in">
+            <div class="strategy-num">02</div>
+            <div class="strategy-content">
+                <h4>Quality Stands Out</h4>
+                <p>Outlets using AI without proper oversight produce lower-quality content. PR pitches with verified data, real quotes, original research, and strong sourcing now stand out dramatically against the AI-generated noise.</p>
+            </div>
+        </li>
+        <li class="strategy-item fade-in">
+            <div class="strategy-num">03</div>
+            <div class="strategy-content">
+                <h4>LLM Optimization — The New SEO</h4>
+                <p>As LLMs increasingly source from news articles, ensuring accurate coverage in reputable outlets has compounding value. A factually correct article in WaPo or WSJ doesn't just reach readers — it trains AI models that serve millions.</p>
+            </div>
+        </li>
+        <li class="strategy-item fade-in">
+            <div class="strategy-num">04</div>
+            <div class="strategy-content">
+                <h4>Risk Mitigation: Know Your Outlets</h4>
+                <p>Monitor which outlets have had accuracy issues post-layoffs. Prioritize pitches to outlets with intact fact-checking teams. A placement in a low-accuracy outlet can backfire — especially if corrections or retractions follow.</p>
+            </div>
+        </li>
+        <li class="strategy-item fade-in">
+            <div class="strategy-num">05</div>
+            <div class="strategy-content">
+                <h4>Trust Arbitrage</h4>
+                <p>In a low-trust environment (28% US, 40% global), media placements in still-trusted outlets carry premium credibility value. Nordic outlets, specialized trade press, and outlets with transparent methodology command disproportionate trust.</p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section fade-in" style="padding-bottom: 2rem;">
+    <div class="section-header">
+        <div class="section-number">METHODOLOGY</div>
+        <h2 class="section-title" style="font-size: 1.5rem;">Sources & Research Notes</h2>
+    </div>
+    <div style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.8; max-width: 800px;">
+        <p><strong>Layoff data:</strong> Press Gazette layoff tracker, The Wrap, Editor & Publisher, TechCrunch, MediaCopilot</p>
+        <p><strong>AI scandal documentation:</strong> CNN Business, Futurism, Semafor, Press Gazette, The Daily Beast, NPR, Washington Post</p>
+        <p><strong>Trust metrics:</strong> Gallup (2025), Reuters Institute Digital News Report (2025), Edelman Trust Barometer (2026)</p>
+        <p><strong>Academic research:</strong> MIT false news study, Nature Communications (2025), AI Magazine (2024)</p>
+        <p><strong>Legal:</strong> TechCrunch (Perplexity lawsuits), Fortune, Bloomberg Law</p>
+        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.82rem;">Impression estimates are conservative extrapolations based on outlet monthly traffic (SimilarWeb), typical article reach percentages, and documented social media amplification. Actual exposure is likely significantly higher. Research conducted March 2026.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>Research & Visualization by <a href="https://timzinin.com">Tim Zinin</a> — March 2026</p>
+    <p style="margin-top: 0.5rem;">Data sourced from Press Gazette, Gallup, Reuters Institute, Edelman, Semafor, MIT, and public reporting</p>
+</footer>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('scrollProgress').style.width = progress + '%';
+});
+
+// Intersection Observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+
+            // Animate bars
+            entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+                setTimeout(() => bar.classList.add('animated'), 200);
+            });
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Counter animation
+function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 2000;
+    const start = performance.now();
+
+    function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+
+        if (target >= 1000) {
+            el.textContent = current.toLocaleString() + '+';
+        } else {
+            el.textContent = current + (target === 53 || target === 28 ? '%' : '×');
+        }
+
+        if (progress < 1) requestAnimationFrame(update);
+    }
+
+    requestAnimationFrame(update);
+}
+
+// Observe counters
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+// Active nav link
+const sections = document.querySelectorAll('.section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Smooth scroll for nav
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+
+// Gauge animation
+const gaugeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const ring = entry.target.querySelector('.value-ring');
+            if (ring) {
+                const targetOffset = ring.dataset.offset;
+                ring.style.strokeDashoffset = targetOffset;
+            }
+        }
+    });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.gauge-circle').forEach(el => gaugeObserver.observe(el));
+</script>
+</body>
+</html>
